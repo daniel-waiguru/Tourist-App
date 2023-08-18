@@ -25,14 +25,6 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                     targetSdk = 33
                     consumerProguardFiles("consumer-rules.pro")
                 }
-                buildTypes {
-                    create("staging") {
-                        initWith(getByName("release"))
-                    }
-                    create("qa") {
-                        initWith(getByName("release"))
-                    }
-                }
             }
             extensions.configure<LibraryAndroidComponentsExtension> {
                 configurePrintApksTask(this)

@@ -26,9 +26,13 @@ gradlePlugin {
             implementationClass = "AndroidRoomConventionPlugin"
         }
 
-        register("androidFeature") {
-            id = "touristnews.android.feature"
-            implementationClass = "AndroidFeatureConventionPlugin"
+        register("androidLibraryCompose") {
+            id = "touristnews.android.library.compose"
+            implementationClass = "AndroidLibraryComposeConventionPlugin"
+        }
+        register("androidApplicationCompose") {
+            id = "touristnews.android.application.compose"
+            implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
         register("androidHilt") {
             id = "touristnews.android.hilt"
