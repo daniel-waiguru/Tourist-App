@@ -15,4 +15,8 @@ dependencies {
     implementation(libs.bundles.network)
     // Paging
     implementation(libs.androidx.paging.runtime)
+
+    // Chucker
+    debugImplementation(libs.chucker.debug)
+    implementation(libs.chucker)
 }
