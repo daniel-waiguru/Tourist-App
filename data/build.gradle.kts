@@ -1,7 +1,6 @@
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     id("touristnews.android.library")
-    id("touristnews.android.room")
     id("touristnews.android.hilt")
 }
 
@@ -14,6 +13,7 @@ android {
 
 dependencies {
     implementation(project(":domain"))
+    implementation(project(":database"))
     // Networking
     implementation(libs.bundles.network)
     // Paging
@@ -21,5 +21,6 @@ dependencies {
 
     // Chucker
     debugImplementation(libs.chucker.debug)
-    implementation(libs.chucker)
+    releaseImplementation(libs.chucker)
+
 }

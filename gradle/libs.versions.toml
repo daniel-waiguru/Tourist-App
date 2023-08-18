@@ -25,6 +25,7 @@ ksp = "1.9.0-1.0.12"
 junit4Ext = "1.1.5"
 junit4 = "4.13.2"
 chucker = "4.0.0"
+gson = "2.10.1"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -59,6 +60,8 @@ hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref
 hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 hilt-ext-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hiltExt" }
+
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 androidx-paging-common-ktx = { group = "androidx.paging", name = "paging-common-ktx", version.ref = "androidxPaging" }

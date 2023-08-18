@@ -3,12 +3,14 @@ package com.danielwaiguru.touristnews.data.di
 import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
+import com.danielwaiguru.touristnews.data.BuildConfig
 import com.danielwaiguru.touristnews.data.sources.remote.api.TouristNewsApiService
 import com.danielwaiguru.touristnews.data.sources.remote.interceptors.HeadersInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
 import okhttp3.Dispatcher
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -17,10 +19,12 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
+
 @Module
-@InstallIn
+@InstallIn(SingletonComponent::class)
 internal object NetworkingModule  {
     private const val REQUEST_TIMEOUT_S = 20L
+    private const val BASE_URL = "http://restapi.adequateshop.com/api/"
     @Singleton
     @Provides
     internal fun provideHttpClient(
@@ -63,7 +67,7 @@ internal object NetworkingModule  {
         moshiConverterFactory: MoshiConverterFactory
     ): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(BuildConfig.BASE_URL)
+            .baseUrl(BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(moshiConverterFactory)
             .build()

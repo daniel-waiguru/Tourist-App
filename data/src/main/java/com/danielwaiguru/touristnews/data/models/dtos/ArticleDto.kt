@@ -16,10 +16,10 @@ data class ArticleDto(
     data class MultiMedia(
         @field:Json(name = "createat")
         val createdAt: String,
-        val description: Any,
+        val description: String?,
         val id: Int,
         val name: String,
-        val title: Any,
+        val title: String?,
         val url: String
     )
     data class User(
