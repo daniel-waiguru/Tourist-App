@@ -7,6 +7,9 @@ plugins {
 
 android {
     namespace = "com.danielwaiguru.touristnews.data"
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
