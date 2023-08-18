@@ -11,4 +11,7 @@ android {
 dependencies {
     // Gson
     implementation(libs.gson)
+
+    // Paging
+    implementation(libs.androidx.paging.runtime)
 }

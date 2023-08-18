@@ -9,11 +9,11 @@ data class ArticleDto(
     val description: String,
     val id: Int,
     val location: String,
-    val multiMedia: List<MultiMedia>,
+    val multiMedia: List<MultiMediaDto>,
     val title: String,
-    val user: User
+    val user: UserDto
 ) {
-    data class MultiMedia(
+    data class MultiMediaDto(
         @field:Json(name = "createat")
         val createdAt: String,
         val description: String?,
@@ -22,7 +22,7 @@ data class ArticleDto(
         val title: String?,
         val url: String
     )
-    data class User(
+    data class UserDto(
         val name: String,
         @field:Json(name = "profilepicture")
         val profilePicture: String,
