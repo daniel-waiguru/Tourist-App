@@ -1,4 +1,4 @@
-package com.danielwaiguru.touristnews.ui.theme
+package com.danielwaiguru.touristnews.designsystem.theme
 
 import android.app.Activity
 import android.os.Build

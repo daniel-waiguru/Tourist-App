@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="articles_title">Articles</string>
+    <string name="tourists_title">Tourists</string>
+    <string name="article_author_image_content_desc">Article author</string>
+    <string name="network_error_message">Failed to retrieve resource</string>
+    <string name="retry">Retry</string>
+</resources>

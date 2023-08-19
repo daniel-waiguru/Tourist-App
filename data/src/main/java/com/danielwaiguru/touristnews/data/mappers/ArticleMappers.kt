@@ -40,7 +40,8 @@ internal fun ArticleEntity.toArticle(): Article =
         id = id,
         location = location,
         title = title,
-        user = user.toUser()
+        user = user.toUser(),
+        url = multiMedia.getOrNull(0)?.url
     )
 
 internal fun ArticleEntity.UserEntity.toUser(): Article.User =

@@ -1,4 +1,4 @@
-package com.danielwaiguru.touristnews.ui.theme
+package com.danielwaiguru.touristnews.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 

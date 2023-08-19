@@ -6,7 +6,8 @@ data class Article(
     val id: Int,
     val location: String,
     val title: String,
-    val user: User
+    val user: User,
+    val url: String?
 ) {
     data class User(
         val name: String,
