@@ -19,12 +19,12 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-
 @Module
 @InstallIn(SingletonComponent::class)
-internal object NetworkingModule  {
+internal object NetworkingModule {
     private const val REQUEST_TIMEOUT_S = 20L
     private const val BASE_URL = "http://restapi.adequateshop.com/api/"
+
     @Singleton
     @Provides
     internal fun provideHttpClient(
@@ -56,10 +56,12 @@ internal object NetworkingModule  {
             )
             .build()
     }
+
     @Singleton
     @Provides
     internal fun provideConverterFactory(): MoshiConverterFactory =
         MoshiConverterFactory.create()
+
     @Singleton
     @Provides
     internal fun provideRetrofit(

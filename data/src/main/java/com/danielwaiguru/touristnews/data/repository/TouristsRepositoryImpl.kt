@@ -20,12 +20,12 @@ import javax.inject.Inject
 internal class TouristsRepositoryImpl @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource
-): TouristsRepository {
+) : TouristsRepository {
     override fun getTourists(): Flow<PagingData<Tourist>> =
         Pager(
             config = getPagingConfig(),
             remoteMediator = TouristsRemoteMediator(localDataSource, remoteDataSource)
-        ){
+        ) {
             localDataSource.getCachedTourists()
         }.flow.map { pagingData ->
             pagingData.map { entity -> entity.toTourist() }

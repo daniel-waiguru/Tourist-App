@@ -16,5 +16,4 @@ internal abstract class DataSourceModule {
     internal abstract fun bindRemoteDataSource(
         retrofitDataSource: RetrofitDataSource
     ): RemoteDataSource
-
 }
