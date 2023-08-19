@@ -30,6 +30,9 @@ gson = "2.10.1"
 coil = "2.2.2"
 googleAccompanist = "0.25.0"
 javax = "1"
+mockk = "1.13.7"
+googleTruth = "1.1.5"
+archCore = "2.2.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -66,7 +69,6 @@ javax = { module = "javax.inject:javax.inject", version.ref = "javax" }
 
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
-kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutines" }
 
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
@@ -75,7 +77,6 @@ hilt-ext-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.r
 
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 
-turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 androidx-paging-common-ktx = { group = "androidx.paging", name = "paging-common-ktx", version.ref = "androidxPaging" }
 androidx-paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "androidxPaging" }
 androidx-paging-runtime = { group = "androidx.paging", name = "paging-runtime", version.ref = "androidxPaging" }
@@ -96,7 +97,14 @@ coil-kt-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "
 
 junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
 junit4-ext = { module = "androidx.test.ext:junit", version.ref = "junit4Ext" }
+turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+mock-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockk" }
+mock-agent = { group = "io.mockk", name = "mockk-agent", version.ref = "mockk" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutines" }
+google-truth = { module = "com.google.truth:truth", version.ref = "googleTruth" }
 espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso-core" }
+androidx-arch-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "archCore" }
 
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
