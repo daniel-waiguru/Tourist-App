@@ -33,7 +33,7 @@ internal fun ArticleDto.MultiMediaDto.toMultiMediaEntity(): ArticleEntity.MultiM
         url = url
     )
 
-internal fun ArticleEntity.toArticle(): Article =
+fun ArticleEntity.toArticle(): Article =
     Article(
         createdAt = createdAt,
         description = description,

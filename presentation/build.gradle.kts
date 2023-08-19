@@ -11,4 +11,5 @@ dependencies {
     implementation(libs.google.accompanist.pager)
     implementation(libs.google.accompanist.pager.indicators)
     implementation(libs.androidx.paging.compose)
+    implementation(project(":database"))
 }

@@ -34,30 +34,28 @@ fun NewFeedItem(
         modifier = modifier,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        if (article.url != null) {
-            OctoKitAsyncImage(
-                url = article.url!!,
-                contentDescription = article.title,
-                modifier = Modifier
-                    .clip(MaterialTheme.shapes.medium)
-                    .size(110.dp)
-            )
-        }
+        OctoKitAsyncImage(
+            url = article.url,
+            contentDescription = article.title ?: stringResource(id = R.string.n_a),
+            modifier = Modifier
+                .clip(MaterialTheme.shapes.medium)
+                .size(90.dp)
+        )
         Spacer(modifier = Modifier.width(10.dp))
         Column(
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
-                text = article.title,
+                text = article.title ?: stringResource(id = R.string.n_a),
                 style = LocalTextStyle.current.copy(
                     fontWeight = FontWeight.Bold,
                     fontSize = 17.sp
                 )
             )
             Text(
-                text = article.description,
-                maxLines = 4,
+                text = article.description ?: stringResource(id = R.string.n_a),
+                maxLines = 3,
                 softWrap = true,
                 style = LocalTextStyle.current.copy(
                     fontWeight = FontWeight.Normal,
@@ -66,7 +64,7 @@ fun NewFeedItem(
             )
             ArticleAuthorSection(
                 user = article.user,
-                createdAt = article.createdAt,
+                createdAt = article.createdAt ?: "",
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(top = 6.dp)
@@ -98,7 +96,7 @@ private fun ArticleAuthorSection(
         verticalAlignment = Alignment.CenterVertically
     ) {
         OctoKitAsyncImage(
-            url = user.profilePicture,
+            url = user.profilePicture ?: "",
             contentDescription = stringResource(id = R.string.article_author_image_content_desc),
             modifier = Modifier
                 .clip(CircleShape)
@@ -114,7 +112,7 @@ private fun ArticleAuthorSection(
                 text = user.name,
                 style = LocalTextStyle.current.copy(
                     fontWeight = FontWeight.SemiBold,
-                    fontSize = 13.sp
+                    fontSize = 12.sp
                 )
             )
             Text(

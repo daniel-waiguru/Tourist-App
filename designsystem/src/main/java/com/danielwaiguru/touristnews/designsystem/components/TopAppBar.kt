@@ -36,12 +36,12 @@ fun OctoKitCenteredTopAppBar(
         },
         modifier = modifier,
         actions = actions,
-        navigationIcon =  {
+        navigationIcon = {
             if (navigationIcon != null && onNavIconPressed != null) {
                 IconButton(onClick = onNavIconPressed) {
                     Icon(
                         imageVector = navigationIcon,
-                        contentDescription = stringResource(id = R.string.nav_icon_content_desc),
+                        contentDescription = stringResource(id = R.string.nav_icon_content_desc)
                     )
                 }
             }

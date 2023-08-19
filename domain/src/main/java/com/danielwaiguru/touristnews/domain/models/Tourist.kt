@@ -5,5 +5,5 @@ data class Tourist(
     val id: Int,
     val touristEmail: String,
     val touristLocation: String,
-    val touristName: String
+    val touristName: String?
 )

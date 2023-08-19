@@ -5,13 +5,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import coil.compose.AsyncImage
+import coil.request.CachePolicy
 import coil.request.ImageRequest
+import com.danielwaiguru.touristnews.designsystem.R
 import com.facebook.shimmer.Shimmer
 import com.facebook.shimmer.ShimmerDrawable
 
 @Composable
 fun OctoKitAsyncImage(
-    url: String,
+    url: String?,
     contentDescription: String,
     modifier: Modifier = Modifier
 ) {
@@ -28,11 +30,13 @@ fun OctoKitAsyncImage(
     }
     AsyncImage(
         model = ImageRequest.Builder(LocalContext.current)
-            .data(url)
+            .data(url ?: "https://theperfectroundgolf.com/wp-content/uploads/2022/04/placeholder.png")
             .crossfade(true)
             .placeholder(shimmerDrawable)
-            .build()
-        ,
+            .memoryCachePolicy(CachePolicy.ENABLED)
+            .diskCachePolicy(CachePolicy.ENABLED)
+            .error(R.drawable.no_image_placeholder)
+            .build(),
         contentDescription = contentDescription,
         contentScale = ContentScale.Crop,
         modifier = modifier

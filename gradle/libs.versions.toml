@@ -29,6 +29,7 @@ chucker = "4.0.0"
 gson = "2.10.1"
 coil = "2.2.2"
 googleAccompanist = "0.25.0"
+javax = "1"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -52,12 +53,16 @@ appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "a
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 google-accompanist-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "googleAccompanist" }
 google-accompanist-pager-indicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "googleAccompanist" }
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltExt" }
 
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-paging = { module = "androidx.room:room-paging", version.ref = "room" }
 room-testing = { module = "androidx.room:room-testing", version.ref = "room" }
+
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+javax = { module = "javax.inject:javax.inject", version.ref = "javax" }
 
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
@@ -118,7 +123,8 @@ compose = [
     "androidx-compose-material-icons-extended",
     "androidx-lifecycle-runtime-compose",
     "material3",
-    "androidx-lifecycle-viewModel-compose"
+    "androidx-lifecycle-viewModel-compose",
+    "androidx-hilt-navigation-compose"
 ]
 compose-testing-manifest = ["ui-tooling", "ui-test-manifest"]
 

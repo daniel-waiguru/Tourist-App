@@ -14,16 +14,17 @@ data class ArticleEntity(
     @ColumnInfo(name = "comment_count")
     val commentCount: Int,
     @ColumnInfo(name = "created_at")
-    val createdAt: String,
-    val description: String,
+    val createdAt: String?,
+    val description: String?,
     @PrimaryKey(autoGenerate = false)
     val id: Int,
     val location: String,
     @ColumnInfo("multi_media")
     val multiMedia: List<MultiMediaEntity>,
-    val title: String,
+    val title: String?,
     @Embedded
-    val user: UserEntity
+    val user: UserEntity,
+    val nextPage: Int? = null
 ) {
     data class MultiMediaEntity(
         @ColumnInfo(name = "created_at")
@@ -37,7 +38,7 @@ data class ArticleEntity(
     data class UserEntity(
         val name: String,
         @ColumnInfo(name = "profile_picture")
-        val profilePicture: String,
+        val profilePicture: String?,
         @ColumnInfo(name = "user_id")
         val userId: Int
     )

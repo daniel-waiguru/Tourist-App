@@ -4,10 +4,9 @@ import androidx.paging.PagingConfig
 
 object DataConstants {
     const val DEFAULT_PAGE = 1
-    const val PAGE_SIZE = 30
+    private const val PAGE_SIZE = 10
 
     fun getPagingConfig() = PagingConfig(
-        pageSize = PAGE_SIZE,
-        enablePlaceholders = false
+        pageSize = PAGE_SIZE
     )
 }

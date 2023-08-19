@@ -2,6 +2,7 @@
 plugins {
     id("touristnews.android.library")
     id("touristnews.android.hilt")
+    id("touristnews.android.room")
 }
 
 android {

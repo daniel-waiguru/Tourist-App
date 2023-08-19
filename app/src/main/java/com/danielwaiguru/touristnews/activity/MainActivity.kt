@@ -1,4 +1,4 @@
-package com.danielwaiguru.touristnews
+package com.danielwaiguru.touristnews.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,6 +11,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import com.danielwaiguru.touristnews.R
 import com.danielwaiguru.touristnews.designsystem.components.OctoKitCenteredTopAppBar
 import com.danielwaiguru.touristnews.designsystem.theme.TouristNewsTheme
 import com.danielwaiguru.touristnews.presentation.HomeScreen

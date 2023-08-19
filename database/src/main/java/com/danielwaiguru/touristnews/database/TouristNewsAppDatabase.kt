@@ -15,7 +15,7 @@ import com.danielwaiguru.touristnews.database.entities.TouristEntity
     version = 1,
     exportSchema = true
 )
-internal abstract class TouristNewsAppDatabase : RoomDatabase() {
+abstract class TouristNewsAppDatabase : RoomDatabase() {
     abstract fun articleDao(): ArticleDao
 
     abstract fun touristDao(): TouristDao

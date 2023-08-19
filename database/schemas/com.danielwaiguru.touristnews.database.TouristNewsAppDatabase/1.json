@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "50a9caf1a79d522677ab9e3751b75065",
+    "identityHash": "b18f6a6e1e7f55f9e799bfd45fa19472",
     "entities": [
       {
         "tableName": "articles_tb",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`comment_count` INTEGER NOT NULL, `created_at` TEXT NOT NULL, `description` TEXT NOT NULL, `id` INTEGER NOT NULL, `location` TEXT NOT NULL, `multi_media` TEXT NOT NULL, `title` TEXT NOT NULL, `name` TEXT NOT NULL, `profile_picture` TEXT NOT NULL, `user_id` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`comment_count` INTEGER NOT NULL, `created_at` TEXT, `description` TEXT, `id` INTEGER NOT NULL, `location` TEXT NOT NULL, `multi_media` TEXT NOT NULL, `title` TEXT, `nextPage` INTEGER, `name` TEXT NOT NULL, `profile_picture` TEXT, `user_id` INTEGER NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "commentCount",
@@ -18,13 +18,13 @@
             "fieldPath": "createdAt",
             "columnName": "created_at",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "description",
             "columnName": "description",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "id",
@@ -48,7 +48,13 @@
             "fieldPath": "title",
             "columnName": "title",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
+          },
+          {
+            "fieldPath": "nextPage",
+            "columnName": "nextPage",
+            "affinity": "INTEGER",
+            "notNull": false
           },
           {
             "fieldPath": "user.name",
@@ -60,7 +66,7 @@
             "fieldPath": "user.profilePicture",
             "columnName": "profile_picture",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "user.userId",
@@ -80,7 +86,7 @@
       },
       {
         "tableName": "tb_tourists",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`created_at` TEXT NOT NULL, `id` INTEGER NOT NULL, `tourist_email` TEXT NOT NULL, `tourist_location` TEXT NOT NULL, `tourist_name` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`created_at` TEXT NOT NULL, `id` INTEGER NOT NULL, `tourist_email` TEXT NOT NULL, `tourist_location` TEXT NOT NULL, `tourist_name` TEXT, `nextPage` INTEGER, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "createdAt",
@@ -110,7 +116,13 @@
             "fieldPath": "touristName",
             "columnName": "tourist_name",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
+          },
+          {
+            "fieldPath": "nextPage",
+            "columnName": "nextPage",
+            "affinity": "INTEGER",
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -126,7 +138,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '50a9caf1a79d522677ab9e3751b75065')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b18f6a6e1e7f55f9e799bfd45fa19472')"
     ]
   }
 }

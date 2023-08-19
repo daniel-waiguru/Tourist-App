@@ -62,8 +62,7 @@ private fun TabsSection(
         },
         modifier = modifier,
         backgroundColor = MaterialTheme.colorScheme.background
-    )
-    {
+    ) {
         tabs.forEachIndexed { index, tabItem ->
             LeadingIconTab(
                 selected = pagerState.currentPage == index,

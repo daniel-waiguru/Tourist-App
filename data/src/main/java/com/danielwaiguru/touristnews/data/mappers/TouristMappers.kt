@@ -21,3 +21,12 @@ internal fun TouristEntity.toTourist(): Tourist =
         touristLocation = touristLocation,
         touristName = touristName
     )
+
+internal fun TouristDto.toTourist(): Tourist =
+    Tourist(
+        createdAt = createdAt,
+        id = id,
+        touristEmail = touristEmail,
+        touristLocation = touristLocation,
+        touristName = touristName
+    )

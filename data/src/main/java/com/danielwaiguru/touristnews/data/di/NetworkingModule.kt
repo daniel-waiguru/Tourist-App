@@ -60,7 +60,11 @@ internal object NetworkingModule {
     @Singleton
     @Provides
     internal fun provideConverterFactory(): MoshiConverterFactory =
-        MoshiConverterFactory.create()
+        MoshiConverterFactory.create().apply {
+            asLenient()
+            failOnUnknown()
+            withNullSerialization()
+        }
 
     @Singleton
     @Provides

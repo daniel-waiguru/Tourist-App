@@ -25,7 +25,7 @@ interface TouristDao {
      *
      * @return
      */
-    @Query("SELECT * FROM $TOURISTS_TABLE_NAME")
+    @Query("SELECT * FROM $TOURISTS_TABLE_NAME ORDER BY id DESC")
     fun getCachedTourists(): PagingSource<Int, TouristEntity>
 
     /**
@@ -34,4 +34,7 @@ interface TouristDao {
      */
     @Query("DELETE FROM $TOURISTS_TABLE_NAME")
     suspend fun clearAll()
+
+    @Query("SELECT Max(nextPage) FROM $TOURISTS_TABLE_NAME")
+    fun getNextPage(): Int?
 }

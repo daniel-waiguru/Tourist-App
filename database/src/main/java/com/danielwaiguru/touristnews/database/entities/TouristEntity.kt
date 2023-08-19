@@ -16,7 +16,8 @@ data class TouristEntity(
     @ColumnInfo(name = "tourist_location")
     val touristLocation: String,
     @ColumnInfo(name = "tourist_name")
-    val touristName: String
+    val touristName: String?,
+    val nextPage: Int? = null
 ) {
     companion object {
         const val TOURISTS_TABLE_NAME = "tb_tourists"

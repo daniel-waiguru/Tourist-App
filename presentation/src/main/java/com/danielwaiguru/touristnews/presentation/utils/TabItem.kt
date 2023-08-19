@@ -10,9 +10,9 @@ typealias ScreenComposable = @Composable () -> Unit
 enum class TabItem(@StringRes val title: Int, val screen: ScreenComposable) {
     NewsFeed(
         title = R.string.articles_title,
-        screen = { NewFeedScreen()}
+        screen = { NewFeedScreen() }
     ), Tourists(
         title = R.string.tourists_title,
-        screen = { TouristsScreen()}
+        screen = { TouristsScreen() }
     );
 }
