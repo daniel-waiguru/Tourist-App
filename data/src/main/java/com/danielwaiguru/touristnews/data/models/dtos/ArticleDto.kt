@@ -5,12 +5,12 @@ import com.squareup.moshi.Json
 data class ArticleDto(
     val commentCount: Int,
     @field:Json(name = "createdat")
-    val createdAt: String,
-    val description: String,
+    val createdAt: String?,
+    val description: String?,
     val id: Int,
     val location: String,
     val multiMedia: List<MultiMediaDto>,
-    val title: String,
+    val title: String?,
     val user: UserDto
 ) {
     data class MultiMediaDto(
@@ -25,7 +25,7 @@ data class ArticleDto(
     data class UserDto(
         val name: String,
         @field:Json(name = "profilepicture")
-        val profilePicture: String,
+        val profilePicture: String?,
         @field:Json(name = "userid")
         val userId: Int
     )

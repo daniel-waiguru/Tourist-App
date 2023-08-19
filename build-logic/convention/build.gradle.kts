@@ -38,6 +38,10 @@ gradlePlugin {
             id = "touristnews.android.hilt"
             implementationClass = "AndroidHiltConventionPlugin"
         }
+        register("androidFeature") {
+            id = "touristnews.android.feature"
+            implementationClass = "AndroidFeatureConventionPlugin"
+        }
         register("jvmLibrary") {
             id = "touristnews.jvm.library"
             implementationClass = "JvmLibraryConventionPlugin"

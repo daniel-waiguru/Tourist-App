@@ -9,7 +9,7 @@ import java.lang.reflect.Type
 class ArticleMultiMediaConverter {
     private val gson: Gson by lazy { Gson() }
     private val type: Type by lazy {
-        object : TypeToken<List<List<ArticleEntity.MultiMediaEntity>>>() {}.type
+        object : TypeToken<List<ArticleEntity.MultiMediaEntity>>() {}.type
     }
 
     @TypeConverter

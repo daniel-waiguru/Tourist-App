@@ -25,7 +25,7 @@ interface ArticleDao {
      *
      * @return
      */
-    @Query("SELECT * FROM $ARTICLES_TABLED_NAME")
+    @Query("SELECT * FROM $ARTICLES_TABLED_NAME ORDER BY id DESC")
     fun getCachedArticles(): PagingSource<Int, ArticleEntity>
 
     /**
@@ -34,4 +34,7 @@ interface ArticleDao {
      */
     @Query("DELETE FROM $ARTICLES_TABLED_NAME")
     suspend fun clearAll()
+
+    @Query("SELECT Max(nextPage) FROM $ARTICLES_TABLED_NAME")
+    suspend fun getNextPage(): Int?
 }

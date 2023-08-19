@@ -1,5 +1,7 @@
 package com.danielwaiguru.touristnews.data.di
 
+import com.danielwaiguru.touristnews.data.sources.local.LocalDataSource
+import com.danielwaiguru.touristnews.data.sources.local.RoomDataSource
 import com.danielwaiguru.touristnews.data.sources.remote.RemoteDataSource
 import com.danielwaiguru.touristnews.data.sources.remote.RetrofitDataSource
 import dagger.Binds
@@ -16,4 +18,10 @@ internal abstract class DataSourceModule {
     internal abstract fun bindRemoteDataSource(
         retrofitDataSource: RetrofitDataSource
     ): RemoteDataSource
+
+    @Singleton
+    @Binds
+    internal abstract fun bindLocalDataSource(
+        roomDataSource: RoomDataSource
+    ): LocalDataSource
 }

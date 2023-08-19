@@ -10,6 +10,7 @@ import com.danielwaiguru.touristnews.data.sources.local.LocalDataSource
 import com.danielwaiguru.touristnews.data.sources.remote.RemoteDataSource
 import com.danielwaiguru.touristnews.data.utils.DataConstants
 import com.danielwaiguru.touristnews.database.entities.TouristEntity
+import timber.log.Timber
 
 @OptIn(ExperimentalPagingApi::class)
 internal class TouristsRemoteMediator(
@@ -25,18 +26,24 @@ internal class TouristsRemoteMediator(
                 LoadType.REFRESH -> null
                 LoadType.PREPEND -> return MediatorResult.Success(endOfPaginationReached = true)
                 LoadType.APPEND -> {
-                    val lastItem = state.lastItemOrNull()
-                        ?: return MediatorResult.Success(
-                            endOfPaginationReached = true
-                        )
-                    lastItem.id
+                    localDataSource.getTouristsNextPage() ?: return MediatorResult.Success(
+                        endOfPaginationReached = true
+                    )
                 }
             }
             val pageNumber = loadKey ?: DataConstants.DEFAULT_PAGE
             val response = remoteDataSource.getTourists(pageNumber)
-            val touristEntities = response.data.map(TouristDto::toTouristEntity)
-            localDataSource.saveTourists(touristEntities)
             val isLastPage = response.page >= response.totalPages
+            val nextPage = if (isLastPage) null else response.page + 1
+            localDataSource.dbTransaction {
+                if (loadType == LoadType.REFRESH) {
+                    localDataSource.clearTourists()
+                }
+                val touristEntities = response.data.map(TouristDto::toTouristEntity)
+                    .map { it.copy(nextPage = nextPage) }
+                localDataSource.saveTourists(touristEntities)
+            }
+
             MediatorResult.Success(
                 endOfPaginationReached = isLastPage
             )
@@ -44,6 +51,7 @@ internal class TouristsRemoteMediator(
             /**
              * Propagate the error and maybe Log to Crashlytics/Sentry
              */
+            Timber.e(e)
             MediatorResult.Error(e)
         }
     }

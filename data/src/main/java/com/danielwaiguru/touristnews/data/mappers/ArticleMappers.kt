@@ -33,14 +33,15 @@ internal fun ArticleDto.MultiMediaDto.toMultiMediaEntity(): ArticleEntity.MultiM
         url = url
     )
 
-internal fun ArticleEntity.toArticle(): Article =
+fun ArticleEntity.toArticle(): Article =
     Article(
         createdAt = createdAt,
         description = description,
         id = id,
         location = location,
         title = title,
-        user = user.toUser()
+        user = user.toUser(),
+        url = multiMedia.getOrNull(0)?.url
     )
 
 internal fun ArticleEntity.UserEntity.toUser(): Article.User =
