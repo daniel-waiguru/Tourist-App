@@ -50,6 +50,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-paging = { module = "androidx.room:room-paging", version.ref = "room" }
 room-testing = { module = "androidx.room:room-testing", version.ref = "room" }
 
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
@@ -97,7 +98,7 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
 [bundles]
-room = ["room-ktx", "room-runtime"]
+room = ["room-ktx", "room-runtime", "room-paging"]
 network = ["retrofit-core", "retrofit-moshi-converter", "okhttp-logging"]
 androidx-lifecycle = ["lifecycle-runtime-ktx", "lifecycle-livedata-ktx", "lifecycle-viewmodel-ktx"]
 compose = [
