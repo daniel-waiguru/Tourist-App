@@ -16,7 +16,7 @@ internal interface RemoteDataSource {
 
 internal class RetrofitDataSource @Inject constructor(
     private val apiService: TouristNewsApiService
-): RemoteDataSource {
+) : RemoteDataSource {
     override suspend fun getNewsFeed(pageNumber: Int): NewsFeedResponse =
         apiService.getNewsFeed(pageNumber)
 

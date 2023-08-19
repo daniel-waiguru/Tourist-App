@@ -18,7 +18,9 @@ internal fun ArticleDto.toArticleEntity(): ArticleEntity =
 
 internal fun ArticleDto.UserDto.toUserEntity(): ArticleEntity.UserEntity =
     ArticleEntity.UserEntity(
-        name = name, profilePicture = profilePicture, userId = userId
+        name = name,
+        profilePicture = profilePicture,
+        userId = userId
     )
 
 internal fun ArticleDto.MultiMediaDto.toMultiMediaEntity(): ArticleEntity.MultiMediaEntity =
@@ -41,5 +43,5 @@ internal fun ArticleEntity.toArticle(): Article =
         user = user.toUser()
     )
 
-internal fun ArticleEntity.UserEntity.toUser() : Article.User =
+internal fun ArticleEntity.UserEntity.toUser(): Article.User =
     Article.User(name, profilePicture)

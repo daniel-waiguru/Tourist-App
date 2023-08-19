@@ -15,13 +15,13 @@ import com.danielwaiguru.touristnews.database.entities.TouristEntity
 internal class TouristsRemoteMediator(
     private val localDataSource: LocalDataSource,
     private val remoteDataSource: RemoteDataSource
-): RemoteMediator<Int, TouristEntity>() {
+) : RemoteMediator<Int, TouristEntity>() {
     override suspend fun load(
         loadType: LoadType,
         state: PagingState<Int, TouristEntity>
     ): MediatorResult {
         return try {
-            val loadKey = when(loadType) {
+            val loadKey = when (loadType) {
                 LoadType.REFRESH -> null
                 LoadType.PREPEND -> return MediatorResult.Success(endOfPaginationReached = true)
                 LoadType.APPEND -> {

@@ -2,8 +2,6 @@
 
 include(":database")
 
-
-
 pluginManagement {
     includeBuild("build-logic")
     repositories {

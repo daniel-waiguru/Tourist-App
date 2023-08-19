@@ -19,7 +19,7 @@ import javax.inject.Inject
 internal class NewsFeedRepositoryImpl @Inject constructor(
     private val localDataSource: LocalDataSource,
     private val remoteDataSource: RemoteDataSource
-): NewsFeedRepository {
+) : NewsFeedRepository {
     override fun getNewsArticles(): Flow<PagingData<Article>> =
         Pager(
             config = getPagingConfig(),

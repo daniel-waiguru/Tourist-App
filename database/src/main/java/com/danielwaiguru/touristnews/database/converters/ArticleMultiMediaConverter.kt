@@ -11,6 +11,7 @@ class ArticleMultiMediaConverter {
     private val type: Type by lazy {
         object : TypeToken<List<List<ArticleEntity.MultiMediaEntity>>>() {}.type
     }
+
     @TypeConverter
     fun fromListToString(medias: List<ArticleEntity.MultiMediaEntity>?): String? {
         return gson.toJson(medias, type)

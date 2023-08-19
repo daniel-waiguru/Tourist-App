@@ -20,7 +20,7 @@ internal interface LocalDataSource {
 internal class RoomDataSource @Inject constructor(
     private val articleDao: ArticleDao,
     private val touristDao: TouristDao
-): LocalDataSource {
+) : LocalDataSource {
     override suspend fun saveArticles(articles: List<ArticleEntity>) =
         articleDao.saveArticles(articles)
 
