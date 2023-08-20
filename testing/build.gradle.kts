@@ -19,6 +19,7 @@ dependencies {
     api(libs.coroutines.test)
     api(libs.espresso.core)
     api(libs.androidx.arch.core.testing)
+    api(libs.robolectric)
     implementation(project(":domain"))
     implementation(libs.androidx.paging.common.ktx)
 }

@@ -9,7 +9,8 @@ val authorUser = ArticleEntity.UserEntity(
 )
 fun testNewsArticle(
     id: Int = 0,
-    createdAt: String = "2022-02-09T13:19:57.4227967"
+    createdAt: String = "2022-02-09T13:19:57.4227967",
+    nextPage: Int = 2
 ) = ArticleEntity(
     commentCount = 1,
     createdAt = createdAt,
@@ -18,5 +19,6 @@ fun testNewsArticle(
     multiMedia = emptyList(),
     user = authorUser,
     id = id,
-    title = "Las Vegas, NV, USA"
+    title = "Las Vegas, NV, USA",
+    nextPage = nextPage
 )

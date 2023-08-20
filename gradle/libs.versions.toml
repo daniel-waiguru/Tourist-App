@@ -33,6 +33,7 @@ javax = "1"
 mockk = "1.13.7"
 googleTruth = "1.1.5"
 archCore = "2.2.0"
+robolectric = "4.10.3"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -105,6 +106,7 @@ coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-
 google-truth = { module = "com.google.truth:truth", version.ref = "googleTruth" }
 espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso-core" }
 androidx-arch-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "archCore" }
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
