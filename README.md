@@ -46,6 +46,7 @@ individual tourist details on tap.
 ## Dependencies
 
 All the dependencies (external libraries) are managed using version catalogs and defined in a single place `gradle/libs.versions.toml` file. This is a scalable approach to manage dependencies and use the same dependency version across all modules.
+Also, [Renovate](https://docs.renovatebot.com/) is configured for automated dependency updates, see [here](https://github.com/daniel-waiguru/Tourist-News/issues/4).
 
 ## Code Analysis
 This repo uses ktlint, a Kotlin linter, to analyze the codebase, identify potential code style violations, code quality issues, etc.
