@@ -14,6 +14,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.LoadState
@@ -31,18 +32,31 @@ fun TouristsScreen(
     viewModel: TouristsViewModel = hiltViewModel()
 ) {
     val uiState = viewModel.touristsUIState.collectAsLazyPagingItems()
-    val isLoading = uiState.loadState.source.refresh is LoadState.Loading && uiState.itemCount == 0
-    val errorMessage = (uiState.loadState.source.refresh as? LoadState.Error)?.error?.message
-    val hasError = uiState.loadState.source.refresh is LoadState.Error && !errorMessage.isNullOrBlank()
-
     var showDetails by remember {
         mutableStateOf(Pair(false, -1))
     }
+    TouristsScreen(
+        uiState = uiState,
+        showDetails = showDetails,
+        onClick = {
+            showDetails = it
+        }
+    )
+}
 
+@Composable
+fun TouristsScreen(
+    uiState: LazyPagingItems<Tourist>,
+    showDetails: Pair<Boolean, Int>,
+    onClick: (Pair<Boolean, Int>) -> Unit
+) {
+    val isLoading = uiState.loadState.source.refresh is LoadState.Loading && uiState.itemCount == 0
+    val errorMessage = (uiState.loadState.source.refresh as? LoadState.Error)?.error?.message
+    val hasError = uiState.loadState.source.refresh is LoadState.Error && !errorMessage.isNullOrBlank()
     if (showDetails.first) {
         TouristDetailDialog(
             touristId = showDetails.second,
-            onDismiss = { showDetails = Pair(false, -1) }
+            onDismiss = { onClick(Pair(false, -1)) }
         )
     }
     if (isLoading) {
@@ -58,11 +72,10 @@ fun TouristsScreen(
     } else {
         TouristsContent(
             modifier = Modifier
-                .fillMaxSize(),
+                .fillMaxSize()
+                .testTag("tourist_list"),
             tourists = uiState,
-            onClick = {
-                showDetails = Pair(true, it)
-            }
+            onClick = { onClick(Pair(true, it)) }
         )
     }
 }

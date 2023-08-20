@@ -14,7 +14,7 @@ import kotlin.test.assertNull
 
 @RunWith(AndroidJUnit4::class)
 @Config(manifest = Config.NONE)
-class ArticleDaoTest: BaseDbTest() {
+class ArticleDaoTest : BaseDbTest() {
     private lateinit var articleDao: ArticleDao
 
     @Before

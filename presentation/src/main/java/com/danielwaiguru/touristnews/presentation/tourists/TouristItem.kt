@@ -19,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -47,14 +48,17 @@ fun TouristItem(
             horizontalAlignment = Alignment.Start
         ) {
             Text(
-                text = tourist.touristName ?: stringResource(id = R.string.n_a)
-
+                text = tourist.touristName ?: stringResource(id = R.string.n_a),
+                modifier = Modifier
+                    .testTag("touristName")
             )
             Text(
                 text = tourist.touristLocation,
                 style = LocalTextStyle.current.copy(
                     fontSize = 12.sp
-                )
+                ),
+                modifier = Modifier
+                    .testTag("touristLocation")
             )
         }
     }
@@ -65,7 +69,8 @@ fun TouristAvatar(
     modifier: Modifier = Modifier
 ) {
     Box(
-        modifier = modifier,
+        modifier = modifier
+            .testTag("tourist_avatar"),
         contentAlignment = Alignment.Center
     ) {
         Icon(

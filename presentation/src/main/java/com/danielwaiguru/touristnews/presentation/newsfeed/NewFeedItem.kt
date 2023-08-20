@@ -16,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -27,7 +28,7 @@ import com.danielwaiguru.touristnews.presentation.R
 
 @Composable
 fun NewFeedItem(
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
     article: Article
 ) {
     Row(
@@ -51,7 +52,9 @@ fun NewFeedItem(
                 style = LocalTextStyle.current.copy(
                     fontWeight = FontWeight.Bold,
                     fontSize = 17.sp
-                )
+                ),
+                modifier = Modifier
+                    .testTag("article_title")
             )
             Text(
                 text = article.description ?: stringResource(id = R.string.n_a),
@@ -60,7 +63,9 @@ fun NewFeedItem(
                 style = LocalTextStyle.current.copy(
                     fontWeight = FontWeight.Normal,
                     fontSize = 11.sp
-                )
+                ),
+                modifier = Modifier
+                    .testTag("article_desc")
             )
             ArticleAuthorSection(
                 user = article.user,
@@ -68,6 +73,7 @@ fun NewFeedItem(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(top = 6.dp)
+                    .testTag("article_author")
             )
         }
     }

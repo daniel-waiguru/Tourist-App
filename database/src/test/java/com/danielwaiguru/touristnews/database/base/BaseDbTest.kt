@@ -17,14 +17,18 @@ abstract class BaseDbTest {
     @get:Rule
     val testCoroutineRule = MainCoroutineRule()
     lateinit var db: TouristNewsAppDatabase
+
     @Before
     open fun setup() {
         val context = ApplicationProvider.getApplicationContext<Context>()
         db = Room.inMemoryDatabaseBuilder(
-            context, TouristNewsAppDatabase::class.java)
+            context,
+            TouristNewsAppDatabase::class.java
+        )
             .allowMainThreadQueries()
             .build()
     }
+
     @After
     open fun tearDownDb() {
         db.clearAllTables()

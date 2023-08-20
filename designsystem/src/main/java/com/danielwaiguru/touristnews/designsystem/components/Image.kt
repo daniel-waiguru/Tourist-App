@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import coil.compose.AsyncImage
 import coil.request.CachePolicy
 import coil.request.ImageRequest
@@ -40,5 +41,6 @@ fun OctoKitAsyncImage(
         contentDescription = contentDescription,
         contentScale = ContentScale.Crop,
         modifier = modifier
+            .testTag("octokit_async_image")
     )
 }

@@ -14,7 +14,7 @@ import kotlin.test.assertNull
 
 @RunWith(AndroidJUnit4::class)
 @Config(manifest = Config.NONE)
-class TouristDaoTest: BaseDbTest() {
+class TouristDaoTest : BaseDbTest() {
     private lateinit var touristDao: TouristDao
     private val touristEntities = listOf(
         testTourist(),
@@ -40,6 +40,7 @@ class TouristDaoTest: BaseDbTest() {
                 .isEqualTo(3)
         }
     }
+
     @Test
     fun touristDao_clearAll_empties_the_table() = runTest {
         touristDao.saveTourists(touristEntities)

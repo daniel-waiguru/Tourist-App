@@ -4,7 +4,7 @@ import com.danielwaiguru.touristnews.domain.use_cases.GetTouristsUseCase
 import com.danielwaiguru.touristnews.domain.utils.ResultWrapper
 import com.danielwaiguru.touristnews.testing.base.BaseViewModelTest
 import com.danielwaiguru.touristnews.testing.repositories.TestTouristRepository
-import com.danielwaiguru.touristnews.testing.repositories.testTourist
+import com.danielwaiguru.touristnews.testing.test_data.testTourist
 import com.google.common.truth.Truth
 import io.mockk.impl.annotations.MockK
 import io.mockk.mockk

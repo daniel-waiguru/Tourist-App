@@ -6,11 +6,11 @@
     <string name="network_error_message">Failed to retrieve resource</string>
     <string name="retry">Retry</string>
     <string name="error_title">Error!</string>
-    <string name="an_error_occured">An error has ocurred, Try again.</string>
+    <string name="an_error_occured">An error has occurred, Try again.</string>
     <string name="n_a">N/A</string>
     <string name="tourist_info">Tourist Information</string>
     <string name="name">Name</string>
     <string name="email">Email</string>
     <string name="location">Location</string>
-    <string name="dismiss_dialog">Dismissdialog</string>
+    <string name="dismiss_dialog">Dismiss dialog</string>
 </resources>
