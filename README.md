@@ -85,9 +85,12 @@ Contains the implementation of local storage using Room.
 #### Domain
 This module encapsulates complex business logic or simple logic that multiple ViewModels reuse. It contains all the use cases of the application and models independent of any framework-specific dependencies and represents the business logic.
 #### Presentation
-Contains views(in this app, Composables) and ViewModels. The views post events to the ViewModel and subscribe to the updated state.
+Contains views(in this app, Composable) and ViewModels. The views post events to the ViewModel and subscribe to the updated state.
 #### Testing
 This model contains test code, test resources and test dependencies.
-  
+
+## App Screenshots
+<img src="https://github.com/daniel-waiguru/Tourist-News/blob/main/screenshots/articles.png" width="260"/>&emsp;<img src="https://github.com/daniel-waiguru/Tourist-News/blob/main/screenshots/tourists.png" width="260"/>&emsp;<img src="https://github.com/daniel-waiguru/Tourist-News/blob/main/screenshots/tourist_detail.png" width="260"/>
+
 
   
