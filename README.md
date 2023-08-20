@@ -1,12 +1,6 @@
 # Tourist-News
 A mobile app that shows a list of tourists and tourist news/articles consuming a public REST API from [AppsLoveWorld](https://www.appsloveworld.com/free-online-sample-rest-api-url-for-testing) written 100% in Kotlin and Jetpack Compose using Android Jetpack Components.
 ## Prerequisites
-Before every commit, make sure you run the following bash script to run static code analysis:
-
-```shell script
-./codeAnalysis.sh
-```
-
 To inspect network requests, run the app, and [Chucker](https://github.com/ChuckerTeam/chucker) will post a notification with all intercepted requests.
 
 To inspect the local database/cache, run the app in an emulator/physical device running on Android version 8 or above and use Android Studio Database Inspector.
@@ -53,6 +47,14 @@ individual tourist details on tap.
 
 All the dependencies (external libraries) are managed using version catalogs and defined in a single place `gradle/libs.versions.toml` file. This is a scalable approach to manage dependencies and use the same dependency version across all modules.
 
+## Code Analysis
+This repo uses ktlint, a Kotlin linter, to analyse the codebase, identify potential code style violations, code quality issues etc.
+Before every commit, make sure you run the following bash script:
+
+```shell script
+./codeAnalysis.sh
+```
+
 ## Testing
 The screenshots below show test reports for tests done on this repo
 
@@ -70,7 +72,7 @@ MVVM separates views (Activities, Fragments, or Composables) from the app's busi
   * Easier onboarding of new team members
   * Easier to test code
   * Makes it easier to enforce coder ownership
-This repo uses MVVM with Clean Architecture with the following modules;
+This repo uses MVVM with Clean Architecture with the following modules:
 #### Data
 Contains repositories, data sources, and model classes. This layer hides the implementation details and data sources from the outside.
 #### Database
