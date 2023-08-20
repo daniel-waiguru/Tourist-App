@@ -48,7 +48,7 @@ individual tourist details on tap.
 All the dependencies (external libraries) are managed using version catalogs and defined in a single place `gradle/libs.versions.toml` file. This is a scalable approach to manage dependencies and use the same dependency version across all modules.
 
 ## Code Analysis
-This repo uses ktlint, a Kotlin linter, to analyse the codebase, identify potential code style violations, code quality issues etc.
+This repo uses ktlint, a Kotlin linter, to analyze the codebase, identify potential code style violations, code quality issues, etc.
 Before every commit, make sure you run the following bash script:
 
 ```shell script
@@ -59,10 +59,10 @@ Before every commit, make sure you run the following bash script:
 The screenshots below show test reports for tests done on this repo
 
 #### Unit Tests
-<img src="https://github.com/daniel-waiguru/Tourist-News/blob/main/screenshots/unit_tests.png"/>
+<img src="/screenshots/unit_tests.png"/>
 
 #### UI Tests
-<img src="https://github.com/daniel-waiguru/Tourist-News/blob/main/screenshots/ui_tests.png"/>
+<img src="/screenshots/ui_tests.png"/>
 
 ## App Architecture
 A well-planned architecture is extremely important for any Android project; It makes it easier to maintain the app as the codebase grows and the team expands. This repo uses the MVVM pattern with clean architecture to have decoupled, testable, and maintainable code.
@@ -87,10 +87,10 @@ This module encapsulates complex business logic or simple logic that multiple Vi
 #### Presentation
 Contains views(in this app, Composable) and ViewModels. The views post events to the ViewModel and subscribe to the updated state.
 #### Testing
-This model contains test code, test resources and test dependencies.
+This model contains test code, test resources, and test dependencies.
 
 ## App Screenshots
-<img src="https://github.com/daniel-waiguru/Tourist-News/blob/main/screenshots/articles.png" width="260"/>&emsp;<img src="https://github.com/daniel-waiguru/Tourist-News/blob/main/screenshots/tourists.png" width="260"/>&emsp;<img src="https://github.com/daniel-waiguru/Tourist-News/blob/main/screenshots/tourist_detail.png" width="260"/>
+<img src="/screenshots/articles.png" width="260"/>&emsp;<img src="/screenshots/tourists.png" width="260"/>&emsp;<img src="/screenshots/tourist_detail.png" width="260"/>
 
 ## License
 ```
