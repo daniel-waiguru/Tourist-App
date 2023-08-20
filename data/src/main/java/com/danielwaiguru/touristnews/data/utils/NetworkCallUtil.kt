@@ -44,15 +44,11 @@ suspend fun <T> safeApiCall(
 }
 
 fun parseErrorBody(throwable: HttpException): ErrorResponse? = try {
-    throwable.response()?.errorBody()?.charStream()?.toString().let {
+    throwable.response()?.errorBody()?.toString()?.let {
         val moshi = Moshi.Builder()
             .build()
         val jsonAdapter = moshi.adapter(ErrorResponse::class.java)
-        if (it != null) {
-            jsonAdapter.fromJson(it)
-        } else {
-            null
-        }
+        jsonAdapter.fromJson(it)
     }
 } catch (e: Exception) {
     e.printStackTrace()

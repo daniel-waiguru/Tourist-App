@@ -1,5 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
+include(":testing")
+
 include(":database")
 
 pluginManagement {

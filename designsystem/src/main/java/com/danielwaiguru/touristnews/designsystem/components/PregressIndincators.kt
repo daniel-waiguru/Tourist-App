@@ -4,6 +4,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
@@ -14,7 +15,8 @@ fun OctoKitProgressIndicator(
     color: Color = Color.White
 ) {
     CircularProgressIndicator(
-        modifier = modifier,
+        modifier = modifier
+            .testTag("octokit_progress_indicator"),
         color = color,
         strokeWidth = stockWidth
     )

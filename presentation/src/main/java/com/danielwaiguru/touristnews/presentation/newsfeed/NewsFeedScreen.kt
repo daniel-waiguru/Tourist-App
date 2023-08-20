@@ -11,6 +11,7 @@ import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.LoadState
@@ -23,10 +24,17 @@ import com.danielwaiguru.touristnews.presentation.common.ErrorView
 import com.danielwaiguru.touristnews.presentation.common.PagingLoadingView
 
 @Composable
-fun NewFeedScreen(
+fun NewsFeedScreen(
     viewModel: NewsFeedViewModel = hiltViewModel()
 ) {
     val uiState = viewModel.newsFeedUIState.collectAsLazyPagingItems()
+    NewsFeedScreen(uiState = uiState)
+}
+
+@Composable
+fun NewsFeedScreen(
+    uiState: LazyPagingItems<Article>
+) {
     val isLoading = uiState.loadState.source.refresh is LoadState.Loading && uiState.itemCount == 0
     val errorMessage = (uiState.loadState.source.refresh as? LoadState.Error)?.error?.message
     val hasError = uiState.loadState.source.refresh is LoadState.Error && !errorMessage.isNullOrBlank()
@@ -43,7 +51,8 @@ fun NewFeedScreen(
     } else {
         NewsFeedContent(
             modifier = Modifier
-                .fillMaxSize(),
+                .fillMaxSize()
+                .testTag("news_articles_content"),
             feeds = uiState
         )
     }

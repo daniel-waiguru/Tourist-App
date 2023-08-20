@@ -21,6 +21,12 @@ internal fun Project.configureAndroidCompose(
         composeOptions {
             kotlinCompilerExtensionVersion = libs.findVersion("androidxComposeCompiler").get().toString()
         }
+        packaging {
+            resources {
+                //excludes += "/META-INF/{AL2.0,LGPL2.1}"
+                excludes += "META-INF/*"
+            }
+        }
 
         dependencies {
             val bom = libs.findLibrary("compose-bom").get()
@@ -28,7 +34,8 @@ internal fun Project.configureAndroidCompose(
             add("implementation", libs.findBundle("compose").get())
 
             add("androidTestImplementation", platform(bom))
-            
+            add("androidTestImplementation", libs.findLibrary("ui-test-junit4").get())
+
             add("debugImplementation", libs.findBundle("compose-testing-manifest").get())
         }
     }
