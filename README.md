@@ -1,4 +1,4 @@
-# Dash
+# Tourist App
 A mobile app that shows a list of tourists and tourist news/articles consuming a public REST API from [AppsLoveWorld](https://www.appsloveworld.com/free-online-sample-rest-api-url-for-testing) written 100% in Kotlin and Jetpack Compose using Android Jetpack Components.
 ## Prerequisites
 To inspect network requests, run the app, and [Chucker](https://github.com/ChuckerTeam/chucker) will post a notification with all intercepted requests.
