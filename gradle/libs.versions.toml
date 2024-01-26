@@ -1,39 +1,40 @@
 [versions]
-agp = "8.1.0"
-core-ktx = "1.10.1"
+agp = "8.2.2"
+core-ktx = "1.12.0"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
-activity-compose = "1.7.2"
-compose-bom = "2023.08.00"
-androidxComposeCompiler = "1.5.0"
+activity-compose = "1.8.2"
+compose-bom = "2024.01.00"
+androidxComposeCompiler = "1.5.8"
 appcompat = "1.6.1"
-material = "1.9.0"
-kotlin = "1.9.0"
-room = "2.5.2"
+material = "1.11.0"
+kotlin = "1.9.22"
+room = "2.6.1"
 kotlinxCoroutines = "1.7.3"
-hilt = "2.47"
-hiltExt = "1.0.0"
-androidxPaging = "3.2.0"
+hilt = "2.48.1"
+hiltExt = "1.1.0"
+androidxPaging = "3.2.1"
 shimmer = "0.5.0"
 turbine = "1.0.0"
-lifecycle = "2.6.1"
+lifecycle = "2.7.0"
 timber = "5.0.1"
 retrofit = "2.9.0"
-okhttp = "4.11.0"
+okhttp = "4.12.0"
 coilCompose = "2.4.0"
-ksp = "1.9.0-1.0.13"
+ksp = "1.9.22-1.0.17"
 junit4Ext = "1.1.5"
 junit4 = "4.13.2"
 chucker = "4.0.0"
 gson = "2.10.1"
-coil = "2.2.2"
+coil = "2.5.0"
 googleAccompanist = "0.25.0"
 javax = "1"
-mockk = "1.13.7"
-googleTruth = "1.1.5"
+mockk = "1.13.9"
+googleTruth = "1.3.0"
 archCore = "2.2.0"
 robolectric = "4.10.3"
+androidxNavigation = "2.7.6"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -49,10 +50,11 @@ ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "androidxNavigation" }
 androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended" }
 androidx-lifecycle-viewModel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
-material3 = { group = "androidx.compose.material3", name = "material3" }
+material3 = { group = "androidx.compose.material3", name = "material3", version = "1.2.0-rc01" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 google-accompanist-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "googleAccompanist" }
@@ -134,7 +136,8 @@ compose = [
     "androidx-lifecycle-runtime-compose",
     "material3",
     "androidx-lifecycle-viewModel-compose",
-    "androidx-hilt-navigation-compose"
+    "androidx-hilt-navigation-compose",
+    "androidx-navigation-compose"
 ]
 compose-testing-manifest = ["ui-tooling", "ui-test-manifest"]
 
