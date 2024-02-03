@@ -9,7 +9,7 @@ plugins {
     alias(libs.plugins.org.jetbrains.kotlin.jvm) apply false
     alias(libs.plugins.ksp) apply false
     alias(libs.plugins.hilt) apply false
-    id("org.jlleitschuh.gradle.ktlint") version "11.5.1"
+    id("org.jlleitschuh.gradle.ktlint") version "11.6.1"
     id("com.diffplug.spotless") version "6.20.0"
 }
 true // Needed to make the Suppress annotation work for the plugins block
